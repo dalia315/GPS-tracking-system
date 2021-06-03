@@ -4,10 +4,10 @@ void SystemInt(void) {}
 void initialize_portF() { // for Red Led
 SYSCTL_RCGCGPIO_R |=0X20; //clock Enable for portF
 while((SYSCTL_PRGPIO_R &0x02)==0);//delay
-GPIO_PORTF_LOCK_R= 0x4c4f434B;
+GPIO_PORTF_LOCK_R= 0x40C4F434B;
 GPIO_PORTF_CR_R |= 0x02; 
 GPIO_PORTF_AMSEL_R &= ~0x02; 
-GPIO_PORTF_PCTL_R &= ~0x000000f0; 
+GPIO_PORTF_PCTL_R &= ~0x000000F0; 
 GPIO_PORTF_AFSEL_R &= ~0x02; 
 GPIO_PORTF_DIR_R |= 0x02; 
 GPIO_PORTF_DEN_R |= 0x02; 
