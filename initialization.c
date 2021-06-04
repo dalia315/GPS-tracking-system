@@ -14,7 +14,7 @@ GPIO_PORTF_DIR_R |= 0x02;
 GPIO_PORTF_DEN_R |= 0x02; 
 GPIO_PORTF_DATA_R &= ~0x02; //Intialize led to be off
 }
-void 7Segment_Display(void){ 
+void seven_Segment_Display_initialize(void){ 
 SYSCTL_RCGCGPIO_R |= 0x03; //clock Enable for portB & portA
 while((SYSCTL_PRGPIO_R &0x03)==0); //delay
 GPIO_PORTB_LOCK_R= 0x4C4F434B;
