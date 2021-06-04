@@ -1,6 +1,9 @@
 #include <math.h>
 #include <stdio.h>
 void SystemInit() {};
+//float calculate (values that will be put on the array) {   NOTE : WE WILL REMOVE INT MAIN LINE OF COURSE}
+/*anther way to make this calculate function is to make the inputs of it are X1 Y1 X2 Y2 the we will inverse
+the 4 lines of taking data from the array, to make them saving data in the array bec data is already in X1 X2 Y1 Y2*/
 int main() {
 	double X1,X2,Y1,Y2,Y,X;
 	float S = 0, D , A[3][2] = { {1,2},{3,4},{5,6} }; 
@@ -18,4 +21,6 @@ int main() {
 			S += D;
 		i += 1 ; 
 		}
+	printf("the distance is %f \n \n", D);
+	printf("the distance is %f \n \n", S);
 	}
