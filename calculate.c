@@ -4,7 +4,7 @@ void SystemInit() {};
 int main() {
 	double X1,X2,Y1,Y2,Y,X;
 	float S = 0, D , A[3][2] = { {1,2},{3,4},{5,6} }; 
-	\\here we input array manually but in the next phase the input will come from GPS module and array size will change ofcourse 
+	//here we input array manually but in the next phase the input will come from GPS module and array size will change ofcourse 
 	int i = 0 ;
 	while (i < 2) {
 		
