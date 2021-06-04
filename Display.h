@@ -1,4 +1,4 @@
-void Delay()
+void delay()
 {
     NVIC_ST_CTRL_R = 0;
     NVIC_ST_RELOAD_R = 15999;
@@ -13,9 +13,9 @@ int units , tenth , hunderdth;
   tenth = 0x20 | ((num/10)%10);
 	hunderdth = 0x40 |( num/100);
 	GPIO_PORTB_DATA_R = units ;
-	Delay();
+	delay();
 	GPIO_PORTB_DATA_R = tenth;
-	Delay();
+	delay();
 	GPIO_PORTB_DATA_R = hunderdth;
-	Delay();
+	delay();
 }
