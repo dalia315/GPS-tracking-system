@@ -9,13 +9,15 @@ void delay()
 void display(int num)
 {
 int units , tenth , hunderdth;
-	units = 0x10 | (num%10);
-  tenth = 0x20 | ((num/10)%10);
-	hunderdth = 0x40 |( num/100);
+	units = 0x40 | ((num%10)<<2);
+  tenth = 0x80| (((num/10)%10)<<2);
+	hunderdth = (( num/100))<<2;
 	GPIO_PORTB_DATA_R = units ;
-	delay();
+	Variable_Delay();
 	GPIO_PORTB_DATA_R = tenth;
-	delay();
+	Variable_Delay();
 	GPIO_PORTB_DATA_R = hunderdth;
-	delay();
+	GPIO_PORTA_DATA_R = 0x01;
+	Variable_Delay();
+	GPIO_PORTA_DATA_R = 0;
 }
