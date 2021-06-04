@@ -1,0 +1,8 @@
+void Variable_Delay(void double x)
+{
+    NVIC_ST_CTRL_R = 0;
+    NVIC_ST_RELOAD_R = x*15999999;
+    NVIC_ST_CTRL_R |= 0x5;
+    while( (NVIC_ST_CTRL_R & (1<<16) ) == 0);
+    NVIC_ST_CTRL_R = 0;
+}
