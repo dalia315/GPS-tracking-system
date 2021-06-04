@@ -15,11 +15,11 @@ int units , tenth , hunderdth;
   tenth = 0x80| (((num/10)%10)<<2);
 	hunderdth = (( num/100))<<2;
 	GPIO_PORTB_DATA_R = units ;
-	Varying_Delay();
+	Varying_Delay(1);
 	GPIO_PORTB_DATA_R = tenth;
-	Varying_Delay();
+	Varying_Delay(1);
 	GPIO_PORTB_DATA_R = hunderdth;
 	GPIO_PORTA_DATA_R = 0x01;
-	Varying_Delay();
+	Varying_Delay(1);
 	GPIO_PORTA_DATA_R = 0;
 }
