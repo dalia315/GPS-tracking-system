@@ -1,7 +1,9 @@
-void delay()
+void Varying_Delay(int factor)
 {
+    int delay;
+    delay = 15999*factor;
     NVIC_ST_CTRL_R = 0;
-    NVIC_ST_RELOAD_R = 15999;
+    NVIC_ST_RELOAD_R = delay;
     NVIC_ST_CTRL_R |= 0x5;
     while( (NVIC_ST_CTRL_R & (1<<16) ) == 0);
     NVIC_ST_CTRL_R = 0;
@@ -13,11 +15,11 @@ int units , tenth , hunderdth;
   tenth = 0x80| (((num/10)%10)<<2);
 	hunderdth = (( num/100))<<2;
 	GPIO_PORTB_DATA_R = units ;
-	Variable_Delay();
+	Varying_Delay();
 	GPIO_PORTB_DATA_R = tenth;
-	Variable_Delay();
+	Varying_Delay();
 	GPIO_PORTB_DATA_R = hunderdth;
 	GPIO_PORTA_DATA_R = 0x01;
-	Variable_Delay();
+	Varying_Delay();
 	GPIO_PORTA_DATA_R = 0;
 }
