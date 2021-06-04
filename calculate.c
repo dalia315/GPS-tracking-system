@@ -3,11 +3,9 @@
 void SystemInit() {};
 int main() {
 	double X1,X2,Y1,Y2,Y,X;
-	float S = 0, D
-		int A[3][2] = { {1,2},{3,4},{5,6} };
-	for (int i = 0 ; i < 2 ; i++) {
-
-
+	float S = 0, D , A[3][2] = { {1,2},{3,4},{5,6} };
+	int i = 0 ;
+	while (i < 2) {
 		
 			X1 = A[i][0] ;
 			Y1 = A[i][1] ;
@@ -17,5 +15,6 @@ int main() {
 			Y = Y2 - Y1;
 			D = sqrt((X * X) + (Y * Y));
 			S += D;
+		i += 1 ; 
 		}
 	}
