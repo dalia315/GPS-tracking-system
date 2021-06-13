@@ -3,6 +3,7 @@
 #include "string.h"
 #include "tm4c123gh6pm.h"
 #include "stdlib.h"
+#include "calculate.h"
 #define isdigit(c) (c >= '0' && c <= '9')
 
 int main()
