@@ -3,6 +3,7 @@
 #include "string.h"
 #include "tm4c123gh6pm.h"
 #include "stdlib.h"
+#define isdigit(c) (c >= '0' && c <= '9')
 
 int main()
 	{
@@ -31,7 +32,8 @@ int main()
 			x1=x2;
 			y1=y2;
 			RED_LED(TD);
-					while ( TD > 100 ) {  //after exceeding 100m stop adding new points
+					while ( TD > 240 ) {             // stop adding new points when distance exceeds 240m
+						                        //our trajectory was around 240m with (+ or - 10m accuracy)
 						Position_into_LCD(1,1);
 						write_string_LCD("Total distance:");
 						Position_into_LCD(1,2);
