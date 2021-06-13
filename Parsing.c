@@ -41,3 +41,31 @@ void Parsing_GPS(double *lat , double *lon) {
 	  }
   }
   
+char* token = strtok(save,",");
+			if (!strcmp(token,"$GNGGA"))
+			{
+				for (j = 0; j < 4; j++)
+				{
+					token = strtok(NULL, ",");
+					if (j == 1)
+					{
+						strncpy(deg, token, 2);
+						strncpy(min, token + 2, strlen(token) - 1);
+						deg[2] = '\0';
+						min[7] = '\0';
+						*lat = atof1(deg) + atof1(min) / 60;
+
+
+					}
+					else if (j == 3)
+					{
+						strncpy(deg, token, 3);
+						strncpy(min, token + 3, strlen(token) - 1);
+						deg[3] = '\0';
+						min[7] = '\0';
+						*lon = atof1(deg) + atof1(min) / 60;
+
+					}
+				}
+			}
+		}
