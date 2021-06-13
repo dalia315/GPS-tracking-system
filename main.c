@@ -11,7 +11,6 @@ int main()
 		Display_on_LCD();
 		UART5_init();
 		initialize_portF();
-		char gomla[]={0};
 		double y1=0;
 		double x1=0;
 		double lat=0;
