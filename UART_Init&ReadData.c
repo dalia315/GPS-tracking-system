@@ -7,3 +7,7 @@ void UART5_init (void){
 	UART5_LCRH_R = 0x0070;
 	UART5_CTL_R = 0x0301;
 }
+char UART_InChar(void){
+	while ((UART5_FR_R & 0x10) != 0 ) {};
+		return (char) (UART5_DR_R & 0xFF);
+	}
