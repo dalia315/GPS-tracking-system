@@ -3,6 +3,10 @@
 #include "string.h"
 #include "tm4c123gh6pm.h"
 #include "stdlib.h"
+#include "LCD.h"
+#include "Parsing.h"
+#include "RedLed.h"
+#include "UART_Init&ReadData.h"
 #include "calculate.h"
 #define isdigit(c) (c >= '0' && c <= '9')
 
