@@ -31,7 +31,7 @@ int main()
 			x1=x2;
 			y1=y2;
 			RED_LED(TD);
-					while ( TD > 100 ) {
+					while ( TD > 100 ) {  //after exceeding 100m stop adding new points
 						Position_into_LCD(1,1);
 						write_string_LCD("Total distance:");
 						Position_into_LCD(1,2);
